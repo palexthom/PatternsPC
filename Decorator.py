@@ -64,6 +64,13 @@ class Foam(CondimentDecorator):
     def cost(self) -> float:
         return self.beverage.cost() + 0.7
 
+class PumpkinSpice(CondimentDecorator):
+    def getDescription(self) -> str:
+        return self.beverage.getDescription() + ", PumpkinSpice"
+
+    def cost(self) -> float:
+        return self.beverage.cost() + 1.0
+
 
 if __name__ == "__main__":
     # This way the client code can support both simple components...
@@ -73,5 +80,5 @@ if __name__ == "__main__":
     boisson = Soy(Mocha(HouseBlend()))
     print(f"{boisson.getDescription()} ${boisson.cost()}")
 
-    boisson = Foam(Soy(Mocha(Espresso())))
+    boisson = PumpkinSpice(Soy(Mocha(Espresso())))
     print(f"{boisson.getDescription()} ${boisson.cost()}")
