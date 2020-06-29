@@ -65,3 +65,5 @@ if __name__ == "__main__":
     print(f"Ethan a commandé une pizza {pizza1.getName()}")
     pizza2 = chicagoStore.orderPizza("Clam")
     print(f"Joen a commandé une pizza {pizza2.getName()}")
+    pizza3 = chicagoStore.orderPizza("Cheese")
+    print(f"Pierre a commandé une pizza {pizza3.getName()}")
